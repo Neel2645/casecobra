@@ -895,6 +895,7 @@ export namespace Prisma {
     id: string | null
     width: number | null
     height: number | null
+    imageUrl: string | null
     croppedImageUrl: string | null
   }
 
@@ -902,6 +903,7 @@ export namespace Prisma {
     id: string | null
     width: number | null
     height: number | null
+    imageUrl: string | null
     croppedImageUrl: string | null
   }
 
@@ -909,6 +911,7 @@ export namespace Prisma {
     id: number
     width: number
     height: number
+    imageUrl: number
     croppedImageUrl: number
     _all: number
   }
@@ -928,6 +931,7 @@ export namespace Prisma {
     id?: true
     width?: true
     height?: true
+    imageUrl?: true
     croppedImageUrl?: true
   }
 
@@ -935,6 +939,7 @@ export namespace Prisma {
     id?: true
     width?: true
     height?: true
+    imageUrl?: true
     croppedImageUrl?: true
   }
 
@@ -942,6 +947,7 @@ export namespace Prisma {
     id?: true
     width?: true
     height?: true
+    imageUrl?: true
     croppedImageUrl?: true
     _all?: true
   }
@@ -1036,6 +1042,7 @@ export namespace Prisma {
     id: string
     width: number
     height: number
+    imageUrl: string
     croppedImageUrl: string | null
     _count: ConfigurationCountAggregateOutputType | null
     _avg: ConfigurationAvgAggregateOutputType | null
@@ -1062,6 +1069,7 @@ export namespace Prisma {
     id?: boolean
     width?: boolean
     height?: boolean
+    imageUrl?: boolean
     croppedImageUrl?: boolean
   }, ExtArgs["result"]["configuration"]>
 
@@ -1069,6 +1077,7 @@ export namespace Prisma {
     id?: boolean
     width?: boolean
     height?: boolean
+    imageUrl?: boolean
     croppedImageUrl?: boolean
   }, ExtArgs["result"]["configuration"]>
 
@@ -1076,6 +1085,7 @@ export namespace Prisma {
     id?: boolean
     width?: boolean
     height?: boolean
+    imageUrl?: boolean
     croppedImageUrl?: boolean
   }, ExtArgs["result"]["configuration"]>
 
@@ -1083,10 +1093,11 @@ export namespace Prisma {
     id?: boolean
     width?: boolean
     height?: boolean
+    imageUrl?: boolean
     croppedImageUrl?: boolean
   }
 
-  export type ConfigurationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "width" | "height" | "croppedImageUrl", ExtArgs["result"]["configuration"]>
+  export type ConfigurationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "width" | "height" | "imageUrl" | "croppedImageUrl", ExtArgs["result"]["configuration"]>
 
   export type $ConfigurationPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Configuration"
@@ -1095,6 +1106,7 @@ export namespace Prisma {
       id: string
       width: number
       height: number
+      imageUrl: string
       croppedImageUrl: string | null
     }, ExtArgs["result"]["configuration"]>
     composites: {}
@@ -1522,6 +1534,7 @@ export namespace Prisma {
     readonly id: FieldRef<"Configuration", 'String'>
     readonly width: FieldRef<"Configuration", 'Int'>
     readonly height: FieldRef<"Configuration", 'Int'>
+    readonly imageUrl: FieldRef<"Configuration", 'String'>
     readonly croppedImageUrl: FieldRef<"Configuration", 'String'>
   }
     
@@ -1907,6 +1920,7 @@ export namespace Prisma {
     id: 'id',
     width: 'width',
     height: 'height',
+    imageUrl: 'imageUrl',
     croppedImageUrl: 'croppedImageUrl'
   };
 
@@ -1994,6 +2008,7 @@ export namespace Prisma {
     id?: StringFilter<"Configuration"> | string
     width?: IntFilter<"Configuration"> | number
     height?: IntFilter<"Configuration"> | number
+    imageUrl?: StringFilter<"Configuration"> | string
     croppedImageUrl?: StringNullableFilter<"Configuration"> | string | null
   }
 
@@ -2001,6 +2016,7 @@ export namespace Prisma {
     id?: SortOrder
     width?: SortOrder
     height?: SortOrder
+    imageUrl?: SortOrder
     croppedImageUrl?: SortOrderInput | SortOrder
   }
 
@@ -2011,6 +2027,7 @@ export namespace Prisma {
     NOT?: ConfigurationWhereInput | ConfigurationWhereInput[]
     width?: IntFilter<"Configuration"> | number
     height?: IntFilter<"Configuration"> | number
+    imageUrl?: StringFilter<"Configuration"> | string
     croppedImageUrl?: StringNullableFilter<"Configuration"> | string | null
   }, "id">
 
@@ -2018,6 +2035,7 @@ export namespace Prisma {
     id?: SortOrder
     width?: SortOrder
     height?: SortOrder
+    imageUrl?: SortOrder
     croppedImageUrl?: SortOrderInput | SortOrder
     _count?: ConfigurationCountOrderByAggregateInput
     _avg?: ConfigurationAvgOrderByAggregateInput
@@ -2033,6 +2051,7 @@ export namespace Prisma {
     id?: StringWithAggregatesFilter<"Configuration"> | string
     width?: IntWithAggregatesFilter<"Configuration"> | number
     height?: IntWithAggregatesFilter<"Configuration"> | number
+    imageUrl?: StringWithAggregatesFilter<"Configuration"> | string
     croppedImageUrl?: StringNullableWithAggregatesFilter<"Configuration"> | string | null
   }
 
@@ -2040,6 +2059,7 @@ export namespace Prisma {
     id?: string
     width: number
     height: number
+    imageUrl: string
     croppedImageUrl?: string | null
   }
 
@@ -2047,6 +2067,7 @@ export namespace Prisma {
     id?: string
     width: number
     height: number
+    imageUrl: string
     croppedImageUrl?: string | null
   }
 
@@ -2054,6 +2075,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     width?: IntFieldUpdateOperationsInput | number
     height?: IntFieldUpdateOperationsInput | number
+    imageUrl?: StringFieldUpdateOperationsInput | string
     croppedImageUrl?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
@@ -2061,6 +2083,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     width?: IntFieldUpdateOperationsInput | number
     height?: IntFieldUpdateOperationsInput | number
+    imageUrl?: StringFieldUpdateOperationsInput | string
     croppedImageUrl?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
@@ -2068,6 +2091,7 @@ export namespace Prisma {
     id?: string
     width: number
     height: number
+    imageUrl: string
     croppedImageUrl?: string | null
   }
 
@@ -2075,6 +2099,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     width?: IntFieldUpdateOperationsInput | number
     height?: IntFieldUpdateOperationsInput | number
+    imageUrl?: StringFieldUpdateOperationsInput | string
     croppedImageUrl?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
@@ -2082,6 +2107,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     width?: IntFieldUpdateOperationsInput | number
     height?: IntFieldUpdateOperationsInput | number
+    imageUrl?: StringFieldUpdateOperationsInput | string
     croppedImageUrl?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
@@ -2135,6 +2161,7 @@ export namespace Prisma {
     id?: SortOrder
     width?: SortOrder
     height?: SortOrder
+    imageUrl?: SortOrder
     croppedImageUrl?: SortOrder
   }
 
@@ -2147,6 +2174,7 @@ export namespace Prisma {
     id?: SortOrder
     width?: SortOrder
     height?: SortOrder
+    imageUrl?: SortOrder
     croppedImageUrl?: SortOrder
   }
 
@@ -2154,6 +2182,7 @@ export namespace Prisma {
     id?: SortOrder
     width?: SortOrder
     height?: SortOrder
+    imageUrl?: SortOrder
     croppedImageUrl?: SortOrder
   }
 
