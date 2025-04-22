@@ -20,6 +20,77 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
 export type Configuration = $Result.DefaultSelection<Prisma.$ConfigurationPayload>
 
 /**
+ * Enums
+ */
+export namespace $Enums {
+  export const OrderStatus: {
+  fulfilled: 'fulfilled',
+  shipped: 'shipped',
+  awaiting_shipment: 'awaiting_shipment'
+};
+
+export type OrderStatus = (typeof OrderStatus)[keyof typeof OrderStatus]
+
+
+export const PhoneModel: {
+  iphonex: 'iphonex',
+  iphone11: 'iphone11',
+  iphone12: 'iphone12',
+  iphone13: 'iphone13',
+  iphone14: 'iphone14',
+  iphone15: 'iphone15'
+};
+
+export type PhoneModel = (typeof PhoneModel)[keyof typeof PhoneModel]
+
+
+export const CaseMaterial: {
+  silicone: 'silicone',
+  polycarbonate: 'polycarbonate'
+};
+
+export type CaseMaterial = (typeof CaseMaterial)[keyof typeof CaseMaterial]
+
+
+export const CaseFinish: {
+  smooth: 'smooth',
+  textured: 'textured'
+};
+
+export type CaseFinish = (typeof CaseFinish)[keyof typeof CaseFinish]
+
+
+export const CaseColor: {
+  black: 'black',
+  blue: 'blue',
+  rose: 'rose'
+};
+
+export type CaseColor = (typeof CaseColor)[keyof typeof CaseColor]
+
+}
+
+export type OrderStatus = $Enums.OrderStatus
+
+export const OrderStatus: typeof $Enums.OrderStatus
+
+export type PhoneModel = $Enums.PhoneModel
+
+export const PhoneModel: typeof $Enums.PhoneModel
+
+export type CaseMaterial = $Enums.CaseMaterial
+
+export const CaseMaterial: typeof $Enums.CaseMaterial
+
+export type CaseFinish = $Enums.CaseFinish
+
+export const CaseFinish: typeof $Enums.CaseFinish
+
+export type CaseColor = $Enums.CaseColor
+
+export const CaseColor: typeof $Enums.CaseColor
+
+/**
  * ##  Prisma Client ʲˢ
  *
  * Type-safe database client for TypeScript & Node.js
@@ -896,6 +967,10 @@ export namespace Prisma {
     width: number | null
     height: number | null
     imageUrl: string | null
+    color: $Enums.CaseColor | null
+    model: $Enums.PhoneModel | null
+    material: $Enums.CaseMaterial | null
+    finish: $Enums.CaseFinish | null
     croppedImageUrl: string | null
   }
 
@@ -904,6 +979,10 @@ export namespace Prisma {
     width: number | null
     height: number | null
     imageUrl: string | null
+    color: $Enums.CaseColor | null
+    model: $Enums.PhoneModel | null
+    material: $Enums.CaseMaterial | null
+    finish: $Enums.CaseFinish | null
     croppedImageUrl: string | null
   }
 
@@ -912,6 +991,10 @@ export namespace Prisma {
     width: number
     height: number
     imageUrl: number
+    color: number
+    model: number
+    material: number
+    finish: number
     croppedImageUrl: number
     _all: number
   }
@@ -932,6 +1015,10 @@ export namespace Prisma {
     width?: true
     height?: true
     imageUrl?: true
+    color?: true
+    model?: true
+    material?: true
+    finish?: true
     croppedImageUrl?: true
   }
 
@@ -940,6 +1027,10 @@ export namespace Prisma {
     width?: true
     height?: true
     imageUrl?: true
+    color?: true
+    model?: true
+    material?: true
+    finish?: true
     croppedImageUrl?: true
   }
 
@@ -948,6 +1039,10 @@ export namespace Prisma {
     width?: true
     height?: true
     imageUrl?: true
+    color?: true
+    model?: true
+    material?: true
+    finish?: true
     croppedImageUrl?: true
     _all?: true
   }
@@ -1043,6 +1138,10 @@ export namespace Prisma {
     width: number
     height: number
     imageUrl: string
+    color: $Enums.CaseColor | null
+    model: $Enums.PhoneModel | null
+    material: $Enums.CaseMaterial | null
+    finish: $Enums.CaseFinish | null
     croppedImageUrl: string | null
     _count: ConfigurationCountAggregateOutputType | null
     _avg: ConfigurationAvgAggregateOutputType | null
@@ -1070,6 +1169,10 @@ export namespace Prisma {
     width?: boolean
     height?: boolean
     imageUrl?: boolean
+    color?: boolean
+    model?: boolean
+    material?: boolean
+    finish?: boolean
     croppedImageUrl?: boolean
   }, ExtArgs["result"]["configuration"]>
 
@@ -1078,6 +1181,10 @@ export namespace Prisma {
     width?: boolean
     height?: boolean
     imageUrl?: boolean
+    color?: boolean
+    model?: boolean
+    material?: boolean
+    finish?: boolean
     croppedImageUrl?: boolean
   }, ExtArgs["result"]["configuration"]>
 
@@ -1086,6 +1193,10 @@ export namespace Prisma {
     width?: boolean
     height?: boolean
     imageUrl?: boolean
+    color?: boolean
+    model?: boolean
+    material?: boolean
+    finish?: boolean
     croppedImageUrl?: boolean
   }, ExtArgs["result"]["configuration"]>
 
@@ -1094,10 +1205,14 @@ export namespace Prisma {
     width?: boolean
     height?: boolean
     imageUrl?: boolean
+    color?: boolean
+    model?: boolean
+    material?: boolean
+    finish?: boolean
     croppedImageUrl?: boolean
   }
 
-  export type ConfigurationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "width" | "height" | "imageUrl" | "croppedImageUrl", ExtArgs["result"]["configuration"]>
+  export type ConfigurationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "width" | "height" | "imageUrl" | "color" | "model" | "material" | "finish" | "croppedImageUrl", ExtArgs["result"]["configuration"]>
 
   export type $ConfigurationPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Configuration"
@@ -1107,6 +1222,10 @@ export namespace Prisma {
       width: number
       height: number
       imageUrl: string
+      color: $Enums.CaseColor | null
+      model: $Enums.PhoneModel | null
+      material: $Enums.CaseMaterial | null
+      finish: $Enums.CaseFinish | null
       croppedImageUrl: string | null
     }, ExtArgs["result"]["configuration"]>
     composites: {}
@@ -1535,6 +1654,10 @@ export namespace Prisma {
     readonly width: FieldRef<"Configuration", 'Int'>
     readonly height: FieldRef<"Configuration", 'Int'>
     readonly imageUrl: FieldRef<"Configuration", 'String'>
+    readonly color: FieldRef<"Configuration", 'CaseColor'>
+    readonly model: FieldRef<"Configuration", 'PhoneModel'>
+    readonly material: FieldRef<"Configuration", 'CaseMaterial'>
+    readonly finish: FieldRef<"Configuration", 'CaseFinish'>
     readonly croppedImageUrl: FieldRef<"Configuration", 'String'>
   }
     
@@ -1921,6 +2044,10 @@ export namespace Prisma {
     width: 'width',
     height: 'height',
     imageUrl: 'imageUrl',
+    color: 'color',
+    model: 'model',
+    material: 'material',
+    finish: 'finish',
     croppedImageUrl: 'croppedImageUrl'
   };
 
@@ -1985,6 +2112,62 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'CaseColor'
+   */
+  export type EnumCaseColorFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'CaseColor'>
+    
+
+
+  /**
+   * Reference to a field of type 'CaseColor[]'
+   */
+  export type ListEnumCaseColorFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'CaseColor[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'PhoneModel'
+   */
+  export type EnumPhoneModelFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'PhoneModel'>
+    
+
+
+  /**
+   * Reference to a field of type 'PhoneModel[]'
+   */
+  export type ListEnumPhoneModelFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'PhoneModel[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'CaseMaterial'
+   */
+  export type EnumCaseMaterialFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'CaseMaterial'>
+    
+
+
+  /**
+   * Reference to a field of type 'CaseMaterial[]'
+   */
+  export type ListEnumCaseMaterialFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'CaseMaterial[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'CaseFinish'
+   */
+  export type EnumCaseFinishFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'CaseFinish'>
+    
+
+
+  /**
+   * Reference to a field of type 'CaseFinish[]'
+   */
+  export type ListEnumCaseFinishFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'CaseFinish[]'>
+    
+
+
+  /**
    * Reference to a field of type 'Float'
    */
   export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
@@ -2009,6 +2192,10 @@ export namespace Prisma {
     width?: IntFilter<"Configuration"> | number
     height?: IntFilter<"Configuration"> | number
     imageUrl?: StringFilter<"Configuration"> | string
+    color?: EnumCaseColorNullableFilter<"Configuration"> | $Enums.CaseColor | null
+    model?: EnumPhoneModelNullableFilter<"Configuration"> | $Enums.PhoneModel | null
+    material?: EnumCaseMaterialNullableFilter<"Configuration"> | $Enums.CaseMaterial | null
+    finish?: EnumCaseFinishNullableFilter<"Configuration"> | $Enums.CaseFinish | null
     croppedImageUrl?: StringNullableFilter<"Configuration"> | string | null
   }
 
@@ -2017,6 +2204,10 @@ export namespace Prisma {
     width?: SortOrder
     height?: SortOrder
     imageUrl?: SortOrder
+    color?: SortOrderInput | SortOrder
+    model?: SortOrderInput | SortOrder
+    material?: SortOrderInput | SortOrder
+    finish?: SortOrderInput | SortOrder
     croppedImageUrl?: SortOrderInput | SortOrder
   }
 
@@ -2028,6 +2219,10 @@ export namespace Prisma {
     width?: IntFilter<"Configuration"> | number
     height?: IntFilter<"Configuration"> | number
     imageUrl?: StringFilter<"Configuration"> | string
+    color?: EnumCaseColorNullableFilter<"Configuration"> | $Enums.CaseColor | null
+    model?: EnumPhoneModelNullableFilter<"Configuration"> | $Enums.PhoneModel | null
+    material?: EnumCaseMaterialNullableFilter<"Configuration"> | $Enums.CaseMaterial | null
+    finish?: EnumCaseFinishNullableFilter<"Configuration"> | $Enums.CaseFinish | null
     croppedImageUrl?: StringNullableFilter<"Configuration"> | string | null
   }, "id">
 
@@ -2036,6 +2231,10 @@ export namespace Prisma {
     width?: SortOrder
     height?: SortOrder
     imageUrl?: SortOrder
+    color?: SortOrderInput | SortOrder
+    model?: SortOrderInput | SortOrder
+    material?: SortOrderInput | SortOrder
+    finish?: SortOrderInput | SortOrder
     croppedImageUrl?: SortOrderInput | SortOrder
     _count?: ConfigurationCountOrderByAggregateInput
     _avg?: ConfigurationAvgOrderByAggregateInput
@@ -2052,6 +2251,10 @@ export namespace Prisma {
     width?: IntWithAggregatesFilter<"Configuration"> | number
     height?: IntWithAggregatesFilter<"Configuration"> | number
     imageUrl?: StringWithAggregatesFilter<"Configuration"> | string
+    color?: EnumCaseColorNullableWithAggregatesFilter<"Configuration"> | $Enums.CaseColor | null
+    model?: EnumPhoneModelNullableWithAggregatesFilter<"Configuration"> | $Enums.PhoneModel | null
+    material?: EnumCaseMaterialNullableWithAggregatesFilter<"Configuration"> | $Enums.CaseMaterial | null
+    finish?: EnumCaseFinishNullableWithAggregatesFilter<"Configuration"> | $Enums.CaseFinish | null
     croppedImageUrl?: StringNullableWithAggregatesFilter<"Configuration"> | string | null
   }
 
@@ -2060,6 +2263,10 @@ export namespace Prisma {
     width: number
     height: number
     imageUrl: string
+    color?: $Enums.CaseColor | null
+    model?: $Enums.PhoneModel | null
+    material?: $Enums.CaseMaterial | null
+    finish?: $Enums.CaseFinish | null
     croppedImageUrl?: string | null
   }
 
@@ -2068,6 +2275,10 @@ export namespace Prisma {
     width: number
     height: number
     imageUrl: string
+    color?: $Enums.CaseColor | null
+    model?: $Enums.PhoneModel | null
+    material?: $Enums.CaseMaterial | null
+    finish?: $Enums.CaseFinish | null
     croppedImageUrl?: string | null
   }
 
@@ -2076,6 +2287,10 @@ export namespace Prisma {
     width?: IntFieldUpdateOperationsInput | number
     height?: IntFieldUpdateOperationsInput | number
     imageUrl?: StringFieldUpdateOperationsInput | string
+    color?: NullableEnumCaseColorFieldUpdateOperationsInput | $Enums.CaseColor | null
+    model?: NullableEnumPhoneModelFieldUpdateOperationsInput | $Enums.PhoneModel | null
+    material?: NullableEnumCaseMaterialFieldUpdateOperationsInput | $Enums.CaseMaterial | null
+    finish?: NullableEnumCaseFinishFieldUpdateOperationsInput | $Enums.CaseFinish | null
     croppedImageUrl?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
@@ -2084,6 +2299,10 @@ export namespace Prisma {
     width?: IntFieldUpdateOperationsInput | number
     height?: IntFieldUpdateOperationsInput | number
     imageUrl?: StringFieldUpdateOperationsInput | string
+    color?: NullableEnumCaseColorFieldUpdateOperationsInput | $Enums.CaseColor | null
+    model?: NullableEnumPhoneModelFieldUpdateOperationsInput | $Enums.PhoneModel | null
+    material?: NullableEnumCaseMaterialFieldUpdateOperationsInput | $Enums.CaseMaterial | null
+    finish?: NullableEnumCaseFinishFieldUpdateOperationsInput | $Enums.CaseFinish | null
     croppedImageUrl?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
@@ -2092,6 +2311,10 @@ export namespace Prisma {
     width: number
     height: number
     imageUrl: string
+    color?: $Enums.CaseColor | null
+    model?: $Enums.PhoneModel | null
+    material?: $Enums.CaseMaterial | null
+    finish?: $Enums.CaseFinish | null
     croppedImageUrl?: string | null
   }
 
@@ -2100,6 +2323,10 @@ export namespace Prisma {
     width?: IntFieldUpdateOperationsInput | number
     height?: IntFieldUpdateOperationsInput | number
     imageUrl?: StringFieldUpdateOperationsInput | string
+    color?: NullableEnumCaseColorFieldUpdateOperationsInput | $Enums.CaseColor | null
+    model?: NullableEnumPhoneModelFieldUpdateOperationsInput | $Enums.PhoneModel | null
+    material?: NullableEnumCaseMaterialFieldUpdateOperationsInput | $Enums.CaseMaterial | null
+    finish?: NullableEnumCaseFinishFieldUpdateOperationsInput | $Enums.CaseFinish | null
     croppedImageUrl?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
@@ -2108,6 +2335,10 @@ export namespace Prisma {
     width?: IntFieldUpdateOperationsInput | number
     height?: IntFieldUpdateOperationsInput | number
     imageUrl?: StringFieldUpdateOperationsInput | string
+    color?: NullableEnumCaseColorFieldUpdateOperationsInput | $Enums.CaseColor | null
+    model?: NullableEnumPhoneModelFieldUpdateOperationsInput | $Enums.PhoneModel | null
+    material?: NullableEnumCaseMaterialFieldUpdateOperationsInput | $Enums.CaseMaterial | null
+    finish?: NullableEnumCaseFinishFieldUpdateOperationsInput | $Enums.CaseFinish | null
     croppedImageUrl?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
@@ -2137,6 +2368,34 @@ export namespace Prisma {
     not?: NestedIntFilter<$PrismaModel> | number
   }
 
+  export type EnumCaseColorNullableFilter<$PrismaModel = never> = {
+    equals?: $Enums.CaseColor | EnumCaseColorFieldRefInput<$PrismaModel> | null
+    in?: $Enums.CaseColor[] | ListEnumCaseColorFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.CaseColor[] | ListEnumCaseColorFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumCaseColorNullableFilter<$PrismaModel> | $Enums.CaseColor | null
+  }
+
+  export type EnumPhoneModelNullableFilter<$PrismaModel = never> = {
+    equals?: $Enums.PhoneModel | EnumPhoneModelFieldRefInput<$PrismaModel> | null
+    in?: $Enums.PhoneModel[] | ListEnumPhoneModelFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.PhoneModel[] | ListEnumPhoneModelFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumPhoneModelNullableFilter<$PrismaModel> | $Enums.PhoneModel | null
+  }
+
+  export type EnumCaseMaterialNullableFilter<$PrismaModel = never> = {
+    equals?: $Enums.CaseMaterial | EnumCaseMaterialFieldRefInput<$PrismaModel> | null
+    in?: $Enums.CaseMaterial[] | ListEnumCaseMaterialFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.CaseMaterial[] | ListEnumCaseMaterialFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumCaseMaterialNullableFilter<$PrismaModel> | $Enums.CaseMaterial | null
+  }
+
+  export type EnumCaseFinishNullableFilter<$PrismaModel = never> = {
+    equals?: $Enums.CaseFinish | EnumCaseFinishFieldRefInput<$PrismaModel> | null
+    in?: $Enums.CaseFinish[] | ListEnumCaseFinishFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.CaseFinish[] | ListEnumCaseFinishFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumCaseFinishNullableFilter<$PrismaModel> | $Enums.CaseFinish | null
+  }
+
   export type StringNullableFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
     in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
@@ -2162,6 +2421,10 @@ export namespace Prisma {
     width?: SortOrder
     height?: SortOrder
     imageUrl?: SortOrder
+    color?: SortOrder
+    model?: SortOrder
+    material?: SortOrder
+    finish?: SortOrder
     croppedImageUrl?: SortOrder
   }
 
@@ -2175,6 +2438,10 @@ export namespace Prisma {
     width?: SortOrder
     height?: SortOrder
     imageUrl?: SortOrder
+    color?: SortOrder
+    model?: SortOrder
+    material?: SortOrder
+    finish?: SortOrder
     croppedImageUrl?: SortOrder
   }
 
@@ -2183,6 +2450,10 @@ export namespace Prisma {
     width?: SortOrder
     height?: SortOrder
     imageUrl?: SortOrder
+    color?: SortOrder
+    model?: SortOrder
+    material?: SortOrder
+    finish?: SortOrder
     croppedImageUrl?: SortOrder
   }
 
@@ -2225,6 +2496,46 @@ export namespace Prisma {
     _max?: NestedIntFilter<$PrismaModel>
   }
 
+  export type EnumCaseColorNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.CaseColor | EnumCaseColorFieldRefInput<$PrismaModel> | null
+    in?: $Enums.CaseColor[] | ListEnumCaseColorFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.CaseColor[] | ListEnumCaseColorFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumCaseColorNullableWithAggregatesFilter<$PrismaModel> | $Enums.CaseColor | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedEnumCaseColorNullableFilter<$PrismaModel>
+    _max?: NestedEnumCaseColorNullableFilter<$PrismaModel>
+  }
+
+  export type EnumPhoneModelNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.PhoneModel | EnumPhoneModelFieldRefInput<$PrismaModel> | null
+    in?: $Enums.PhoneModel[] | ListEnumPhoneModelFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.PhoneModel[] | ListEnumPhoneModelFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumPhoneModelNullableWithAggregatesFilter<$PrismaModel> | $Enums.PhoneModel | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedEnumPhoneModelNullableFilter<$PrismaModel>
+    _max?: NestedEnumPhoneModelNullableFilter<$PrismaModel>
+  }
+
+  export type EnumCaseMaterialNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.CaseMaterial | EnumCaseMaterialFieldRefInput<$PrismaModel> | null
+    in?: $Enums.CaseMaterial[] | ListEnumCaseMaterialFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.CaseMaterial[] | ListEnumCaseMaterialFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumCaseMaterialNullableWithAggregatesFilter<$PrismaModel> | $Enums.CaseMaterial | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedEnumCaseMaterialNullableFilter<$PrismaModel>
+    _max?: NestedEnumCaseMaterialNullableFilter<$PrismaModel>
+  }
+
+  export type EnumCaseFinishNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.CaseFinish | EnumCaseFinishFieldRefInput<$PrismaModel> | null
+    in?: $Enums.CaseFinish[] | ListEnumCaseFinishFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.CaseFinish[] | ListEnumCaseFinishFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumCaseFinishNullableWithAggregatesFilter<$PrismaModel> | $Enums.CaseFinish | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedEnumCaseFinishNullableFilter<$PrismaModel>
+    _max?: NestedEnumCaseFinishNullableFilter<$PrismaModel>
+  }
+
   export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
     in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
@@ -2255,6 +2566,22 @@ export namespace Prisma {
     divide?: number
   }
 
+  export type NullableEnumCaseColorFieldUpdateOperationsInput = {
+    set?: $Enums.CaseColor | null
+  }
+
+  export type NullableEnumPhoneModelFieldUpdateOperationsInput = {
+    set?: $Enums.PhoneModel | null
+  }
+
+  export type NullableEnumCaseMaterialFieldUpdateOperationsInput = {
+    set?: $Enums.CaseMaterial | null
+  }
+
+  export type NullableEnumCaseFinishFieldUpdateOperationsInput = {
+    set?: $Enums.CaseFinish | null
+  }
+
   export type NullableStringFieldUpdateOperationsInput = {
     set?: string | null
   }
@@ -2282,6 +2609,34 @@ export namespace Prisma {
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
     not?: NestedIntFilter<$PrismaModel> | number
+  }
+
+  export type NestedEnumCaseColorNullableFilter<$PrismaModel = never> = {
+    equals?: $Enums.CaseColor | EnumCaseColorFieldRefInput<$PrismaModel> | null
+    in?: $Enums.CaseColor[] | ListEnumCaseColorFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.CaseColor[] | ListEnumCaseColorFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumCaseColorNullableFilter<$PrismaModel> | $Enums.CaseColor | null
+  }
+
+  export type NestedEnumPhoneModelNullableFilter<$PrismaModel = never> = {
+    equals?: $Enums.PhoneModel | EnumPhoneModelFieldRefInput<$PrismaModel> | null
+    in?: $Enums.PhoneModel[] | ListEnumPhoneModelFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.PhoneModel[] | ListEnumPhoneModelFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumPhoneModelNullableFilter<$PrismaModel> | $Enums.PhoneModel | null
+  }
+
+  export type NestedEnumCaseMaterialNullableFilter<$PrismaModel = never> = {
+    equals?: $Enums.CaseMaterial | EnumCaseMaterialFieldRefInput<$PrismaModel> | null
+    in?: $Enums.CaseMaterial[] | ListEnumCaseMaterialFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.CaseMaterial[] | ListEnumCaseMaterialFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumCaseMaterialNullableFilter<$PrismaModel> | $Enums.CaseMaterial | null
+  }
+
+  export type NestedEnumCaseFinishNullableFilter<$PrismaModel = never> = {
+    equals?: $Enums.CaseFinish | EnumCaseFinishFieldRefInput<$PrismaModel> | null
+    in?: $Enums.CaseFinish[] | ListEnumCaseFinishFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.CaseFinish[] | ListEnumCaseFinishFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumCaseFinishNullableFilter<$PrismaModel> | $Enums.CaseFinish | null
   }
 
   export type NestedStringNullableFilter<$PrismaModel = never> = {
@@ -2342,6 +2697,57 @@ export namespace Prisma {
     not?: NestedFloatFilter<$PrismaModel> | number
   }
 
+  export type NestedEnumCaseColorNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.CaseColor | EnumCaseColorFieldRefInput<$PrismaModel> | null
+    in?: $Enums.CaseColor[] | ListEnumCaseColorFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.CaseColor[] | ListEnumCaseColorFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumCaseColorNullableWithAggregatesFilter<$PrismaModel> | $Enums.CaseColor | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedEnumCaseColorNullableFilter<$PrismaModel>
+    _max?: NestedEnumCaseColorNullableFilter<$PrismaModel>
+  }
+
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type NestedEnumPhoneModelNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.PhoneModel | EnumPhoneModelFieldRefInput<$PrismaModel> | null
+    in?: $Enums.PhoneModel[] | ListEnumPhoneModelFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.PhoneModel[] | ListEnumPhoneModelFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumPhoneModelNullableWithAggregatesFilter<$PrismaModel> | $Enums.PhoneModel | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedEnumPhoneModelNullableFilter<$PrismaModel>
+    _max?: NestedEnumPhoneModelNullableFilter<$PrismaModel>
+  }
+
+  export type NestedEnumCaseMaterialNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.CaseMaterial | EnumCaseMaterialFieldRefInput<$PrismaModel> | null
+    in?: $Enums.CaseMaterial[] | ListEnumCaseMaterialFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.CaseMaterial[] | ListEnumCaseMaterialFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumCaseMaterialNullableWithAggregatesFilter<$PrismaModel> | $Enums.CaseMaterial | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedEnumCaseMaterialNullableFilter<$PrismaModel>
+    _max?: NestedEnumCaseMaterialNullableFilter<$PrismaModel>
+  }
+
+  export type NestedEnumCaseFinishNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.CaseFinish | EnumCaseFinishFieldRefInput<$PrismaModel> | null
+    in?: $Enums.CaseFinish[] | ListEnumCaseFinishFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.CaseFinish[] | ListEnumCaseFinishFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumCaseFinishNullableWithAggregatesFilter<$PrismaModel> | $Enums.CaseFinish | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedEnumCaseFinishNullableFilter<$PrismaModel>
+    _max?: NestedEnumCaseFinishNullableFilter<$PrismaModel>
+  }
+
   export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
     in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
@@ -2357,17 +2763,6 @@ export namespace Prisma {
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedStringNullableFilter<$PrismaModel>
     _max?: NestedStringNullableFilter<$PrismaModel>
-  }
-
-  export type NestedIntNullableFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
 

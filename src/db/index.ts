@@ -1,7 +1,7 @@
 import { PrismaClient } from '@prisma/client';
 
 declare global{
-    var cachedPrisma : PrismaClient
+    var cachedPrisma : PrismaClient | undefined
 }
 
 let prisma : PrismaClient
